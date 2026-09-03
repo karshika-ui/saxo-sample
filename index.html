@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SAXO sample request management">
+  <title>SAXO Sample Requests</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <main id="authScreen" class="auth-screen">
+    <section class="auth-brand">
+      <a class="brand" href="#" aria-label="SAXO"><span>S</span>SAXO</a>
+      <div>
+        <p class="overline">SAMPLE OPERATIONS</p>
+        <h1>From request<br>to reality.</h1>
+        <p class="brand-intro">Create accurate sample requests and keep every detail in one secure workspace.</p>
+      </div>
+      <p class="brand-footer">Simple. Reliable. Connected.</p>
+    </section>
+    <section class="auth-content">
+      <div class="auth-card">
+        <div id="signInPanel">
+          <p class="overline green">WELCOME BACK</p>
+          <h2>Sign in to your account</h2>
+          <p class="muted">Enter your account details to continue.</p>
+          <form id="signInForm" novalidate>
+            <div class="field"><label for="signInEmail">Email address <b>*</b></label><input id="signInEmail" name="email" type="email" autocomplete="email" placeholder="name@company.com"><small class="error"></small></div>
+            <div class="field"><label for="signInPassword">Password <b>*</b></label><input id="signInPassword" name="password" type="password" autocomplete="current-password" placeholder="Enter your password"><small class="error"></small></div>
+            <p id="signInError" class="form-error" role="alert"></p>
+            <button class="button primary full" type="submit">Sign in <span>→</span></button>
+          </form>
+          <p class="auth-switch">New to SAXO? <button type="button" data-auth-view="signup">Create an account</button></p>
+        </div>
+        <div id="signUpPanel" hidden>
+          <button class="back" type="button" data-auth-view="signin">← Back to sign in</button>
+          <p class="overline green">CREATE ACCOUNT</p>
+          <h2>Set up your account</h2>
+          <p class="muted">Use your work email and a secure password.</p>
+          <form id="signUpForm" novalidate>
+            <div class="field"><label for="signUpEmail">Email address <b>*</b></label><input id="signUpEmail" name="email" type="email" autocomplete="email" placeholder="name@company.com"><small class="error"></small></div>
+            <div class="field"><label for="signUpPassword">Password <b>*</b></label><input id="signUpPassword" name="password" type="password" autocomplete="new-password" placeholder="At least 8 characters"><small class="error"></small></div>
+            <div class="field"><label for="confirmPassword">Confirm password <b>*</b></label><input id="confirmPassword" name="confirmPassword" type="password" autocomplete="new-password" placeholder="Repeat your password"><small class="error"></small></div>
+            <p id="signUpError" class="form-error" role="alert"></p>
+            <button class="button primary full" type="submit">Create account</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="application" class="application" hidden>
+    <aside id="sidebar" class="sidebar">
+      <div class="sidebar-head"><a class="brand" href="#"><span>S</span>SAXO</a><button id="collapseSidebar" class="icon-button" type="button" aria-label="Collapse sidebar">‹</button></div>
+      <nav aria-label="Application navigation">
+        <p class="nav-label">WORKSPACE</p>
+        <button class="nav-link active" type="button" data-page="dashboard"><i>⌂</i><span>Dashboard</span></button>
+        <div class="nav-group open">
+          <button id="sampleMenu" class="nav-link nav-parent" type="button" aria-expanded="true"><i>▱</i><span>Sample Request</span><b>⌄</b></button>
+          <div class="submenu">
+            <button type="button" data-page="request-fill">Sample Request Fill</button>
+            <button type="button" data-page="request-view">Sample Request View</button>
+          </div>
+        </div>
+      </nav>
+      <div class="user-card"><div id="avatar">U</div><span><strong id="userDisplay">User</strong><small id="userEmail"></small></span><button id="logoutButton" type="button" title="Log out" aria-label="Log out">↪</button></div>
+    </aside>
+    <div id="mobileOverlay" class="mobile-overlay"></div>
+    <section class="workspace">
+      <header class="topbar"><button id="mobileMenu" class="icon-button" type="button" aria-label="Open menu">☰</button><div><strong id="pageTitle">Dashboard</strong><small id="breadcrumb">Workspace / Dashboard</small></div></header>
+      <main id="pageContent" class="page-content"></main>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
